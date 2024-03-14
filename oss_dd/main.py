@@ -27,9 +27,9 @@ def get_id_list(condition: dict) -> Generator[dict, None, None]:
 
 
 def delete_data(customer: dict):
+    # 削除対象確認用に標準出力に出力する。
     print(f'{customer["customer_id"]},{customer["tenant_id"]},{customer["last_name"]}')
-    #client.delete(index=INDEX, id=deleting_id)
-    pass
+    client.delete(index=INDEX, id=str(customer["customer_id"]))
 
 
 def main():
