@@ -5,11 +5,12 @@ from opensearch_dsl import Search
 from typing import Generator
 
 CONDITION = json.loads(os.getenv("CONDITION"))
-OSS_HOST = os.getenv("OSS_HOST")
+OSS_HOST = os.getenv("OSS_HOST", "localhost")
+OSS_PORT = int(os.getenv("OSS_PORT", 9200))
 INDEX = os.getenv("INDEX")
 
 client = OpenSearch(
-    hosts=[{'host': OSS_HOST, 'port': 443}],
+    hosts=[{'host': OSS_HOST, 'port': OSS_PORT}],
     http_compress=True,
     use_ssl=True,
     ssl_assert_hostname=False,
