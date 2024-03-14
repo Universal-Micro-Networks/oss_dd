@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "oss-dd"
+version = "0.1.0"
+description = "Opensearch Servie (Elasticsearch Service) Document Deleter"
+authors = ["Tadashi Takahashi <ttakahashi@umn.co.jp>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+opensearch-py = "^2.4.2"
+opensearch-dsl = "^2.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
